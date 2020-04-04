@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9a064be3-e492-4d7d-a25e-30e62690d3d8" name="Default Changelist" comment="" />
+    <list default="true" id="9a064be3-e492-4d7d-a25e-30e62690d3d8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1a4SsVICdtMwu47q9q0MERfY4cH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -41,6 +55,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="552" y="258" key="#Project_Structure/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1585993807375" />
+    <state x="642" y="525" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585995190977">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="642" y="525" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1585995190977" />
     <state x="740" y="354" key="FileChooserDialogImpl" timestamp="1585993759191">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
