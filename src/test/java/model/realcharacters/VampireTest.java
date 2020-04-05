@@ -16,17 +16,17 @@ public class VampireTest {
     Vampire vampire;
 
     @Before
-    public void beforeEach(){
+    public void beforeEach() {
         target = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //Vampire(health, level, [str, int, agi])
-        vampire = new Vampire(100, 10, [5,5,5]);
+        vampire = new Vampire(100, 10,[5, 5, 5]);
     }
 
     @Test
-    public void testDefaultConstructorValues(){
-        Assert.assertEquals("Vampire",vampire.getName());
+    public void testDefaultConstructorValues() {
+        Assert.assertEquals("Vampire", vampire.getName());
         Assert.assertEquals(5, vampire.getHealthRegen());
         Assert.assertEquals(250, vampire.getExpReward());
         Assert.assertEquals("Magic item", vampire.getLoot());
@@ -34,25 +34,25 @@ public class VampireTest {
     }
 
     @Test
-    public void testVampireExtendsCharacter(){
+    public void testVampireExtendsCharacter() {
         Assert.assertTrue(vampire instanceof Creature);
     }
 
     @Test
-    public void testClassImplementsCorrectInterfaces(){
+    public void testClassImplementsCorrectInterfaces() {
         Assert.assertTrue(vampire instanceof Monster);
         Assert.assertTrue(vampire instanceof Undead);
         Assert.assertTrue(vampire instanceof MagicCaster);
     }
 
     @Test
-    public void testVampireSpell(){
+    public void testVampireSpell() {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);
 
-        int damageSupposedToBeDealt = (vampire.getLevel()*vampire.getIntelligence()) - (target.getLevel()+target.getIntelligence());
-        int healAmount = damageSupposedToBeDealt/2;
+        int damageSupposedToBeDealt = (vampire.getLevel() * vampire.getIntelligence()) - (target.getLevel() + target.getIntelligence());
+        int healAmount = damageSupposedToBeDealt / 2;
 
         vampire.castSpell(target);
         Mockito.verify(target).takeDamage(damageSupposedToBeDealt);
@@ -60,12 +60,12 @@ public class VampireTest {
     }
 
     @Test
-    public void testVampireSpellForLowHealthTarget(){
+    public void testVampireSpellForLowHealthTarget() {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(10);
 
-        int damageSupposedToBeDealt = (vampire.getLevel()*vampire.getIntelligence()) - (target.getLevel()+target.getIntelligence());
+        int damageSupposedToBeDealt = (vampire.getLevel() * vampire.getIntelligence()) - (target.getLevel() + target.getIntelligence());
         int cappedHealAmount = target.getHealthPoints();
 
         vampire.castSpell(target);
@@ -74,7 +74,7 @@ public class VampireTest {
     }
 
     @Test
-    public void testVampireSpellForHighLevelTarget(){
+    public void testVampireSpellForHighLevelTarget() {
         Mockito.when(target.getLevel()).thenReturn(1000);
         Mockito.when(target.getIntelligence()).thenReturn(1000);
         Mockito.when(target.getHealthPoints()).thenReturn(1000);
@@ -86,7 +86,6 @@ public class VampireTest {
         Mockito.verify(target).takeDamage(minimumDamage);
         Mockito.verify(vampire).heal(healAmount);
     }
-
 
 
 }
