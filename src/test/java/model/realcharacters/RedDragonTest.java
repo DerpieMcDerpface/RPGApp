@@ -26,7 +26,6 @@ public class RedDragonTest {
     @Test
     public void testDefaultConstructorValues() {
         Assert.assertEquals("Red Dragon", redDragon.getName());
-        Assert.assertEquals(5, redDragon.getHealthRegen());
         Assert.assertEquals(500, redDragon.getExpReward());
         Assert.assertEquals("Huge amount of gold KEKW", redDragon.getLoot());
         Assert.assertFalse(redDragon.isDodging());

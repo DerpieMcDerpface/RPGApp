@@ -21,13 +21,12 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //Vampire(health, level, [str, int, agi])
-        vampire = new Vampire(100, 10,[5, 5, 5]);
+        vampire = new Vampire(100, 10,[5, 5, 5], 250, "Magic item" );
     }
 
     @Test
     public void testDefaultConstructorValues() {
         Assert.assertEquals("Vampire", vampire.getName());
-        Assert.assertEquals(5, vampire.getHealthRegen());
         Assert.assertEquals(250, vampire.getExpReward());
         Assert.assertEquals("Magic item", vampire.getLoot());
         Assert.assertFalse(vampire.isDodging());
