@@ -29,7 +29,7 @@ public class RedDragonTest {
     public void testDefaultConstructorValues() {
         Assert.assertEquals("Red Dragon", redDragon.getName());
         Assert.assertEquals(500, redDragon.getExpReward());
-        Assert.assertEquals("Huge amount of gold KEKW", redDragon.getLoot());
+        Assert.assertEquals("Huge amount of gold", redDragon.getLoot());
         Assert.assertFalse(redDragon.isDodging());
     }
 
@@ -46,12 +46,11 @@ public class RedDragonTest {
 
     @Test
     public void testRedDragonBreathOnMonsters() {
-        otherTarget = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
+        otherTarget = Mockito.mock(Creature.class);
         Mockito.when(otherTarget.getLevel()).thenReturn(1);
         Mockito.when(otherTarget.getIntelligence()).thenReturn(10);
         Mockito.when(otherTarget.getHealthPoints()).thenReturn(100);
 
-        //I suppose this breath is clearly broken, but better nerf Irelia ¯\_(ツ)_/¯
         int damageSupposedToBeDealt = (redDragon.getLevel() * redDragon.getIntelligence());
 
         redDragon.breath();
