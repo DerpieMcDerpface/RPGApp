@@ -16,7 +16,7 @@ public class GoldDragonTest {
 
     @Before
     public void beforeEach(){
-        target = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
+        target = Mockito.mock(Creature.class);
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);

@@ -8,10 +8,12 @@ import fr.sogeti.rpgapp.model.characteroptions.Undead;
 public class Lich extends Creature implements Undead, Monster, MagicCaster {
 
     private String loot;
-    private static final int xpReward = 250;
-    public Lich(String name, int healthPoints, int level, int[] stats, String loot) {
-        super(name, healthPoints, level, stats);
-        this.loot = loot;
+    private int expReward = 250;
+
+    public Lich(int healthPoints, int level, int[] stats) {
+        super("Arthas", healthPoints, level, stats);
+        this.loot = "Magic wand";
+        this.expReward = 500;
     }
 
     @Override
@@ -20,8 +22,8 @@ public class Lich extends Creature implements Undead, Monster, MagicCaster {
     }
 
     @Override
-    public void makeSound() {
-
+    public String makeSound() {
+        return "Je suis Arthas";
     }
 
     public int getHealthRegen() {return this.healthRegen; }
@@ -31,10 +33,7 @@ public class Lich extends Creature implements Undead, Monster, MagicCaster {
     }
 
     public int getExpReward() {
-        return this.xpReward;
+        return this.expReward;
     }
 
-    public void setLoot(String loot) {
-        this.loot = loot;
-    }
 }

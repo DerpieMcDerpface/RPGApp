@@ -17,11 +17,11 @@ public class LichTest {
 
     @Before
     public void beforeEach() {
-        targetNormal = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
-        Mockito.when(target.getLevel()).thenReturn(1);
-        Mockito.when(target.getIntelligence()).thenReturn(10);
+        targetNormal = Mockito.mock(Creature.class);
+        Mockito.when(targetNormal.getLevel()).thenReturn(1);
+        Mockito.when(targetNormal.getIntelligence()).thenReturn(10);
         //Lich(health, level, [str, int, agi])
-        lich = new Lich("Arthas", 100, 10, new int[]{5, 5, 5});
+        lich = new Lich(100, 10, new int[]{5, 5, 5});
     }
 
     @Test
@@ -47,7 +47,7 @@ public class LichTest {
 
     @Test
     public void testLichSpellOnUndead() {
-        targetUndead = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
+        targetUndead = Mockito.mock(Creature.class);
         Mockito.when(targetUndead.getLevel()).thenReturn(1);
         Mockito.when(targetUndead.getIntelligence()).thenReturn(10);
         Mockito.when(targetUndead.getHealthPoints()).thenReturn(100);
