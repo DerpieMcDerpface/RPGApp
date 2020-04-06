@@ -7,18 +7,16 @@ import fr.sogeti.rpgapp.model.characteroptions.Monster;
 
 public class RedDragon extends Creature implements Dragon, Monster {
 
-    private String loot;
-    private int expReward;
+    private static final String loot = "Huge amount of gold";
+    private static final int expReward = 500;
 
     public RedDragon(int healthPoints, int level, int[] stats) {
         super("Red Dragon", healthPoints, level, stats);
-        this.loot = "Huge amount of gold";
-        this.expReward = 1000;
     }
 
     @Override
     public void breath() {
-        System.out.println("I'm out of fire... halp!");
+        System.out.println("bouh");
     }
 
     @Override
@@ -34,7 +32,4 @@ public class RedDragon extends Creature implements Dragon, Monster {
         return expReward;
     }
 
-    public void castSpell(Creature target) {
-
-    }
 }
