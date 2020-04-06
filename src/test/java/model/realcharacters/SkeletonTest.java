@@ -43,6 +43,6 @@ public class SkeletonTest {
 
     @Test
     public void testGoldDragonMakeSound(){
-        Assert.assertEquals("Doot doot",skeleton.makeSound());
+        Assert.assertEquals("Doot doot !",skeleton.makeSound());
     }
 }
