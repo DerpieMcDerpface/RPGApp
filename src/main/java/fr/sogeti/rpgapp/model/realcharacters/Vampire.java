@@ -8,13 +8,12 @@ import fr.sogeti.rpgapp.model.characteroptions.Undead;
 public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     private String loot;
-    private static final int xpReward = 250;
+    private static final int expReward = 250;
 
-    public Vampire(String name, int healthPoints, int level, int[] stats, String loot) {
-        super(name, healthPoints, level, stats);
-        this.loot = loot;
+    public Vampire(int healthPoints, int level, int[] stats) {
+        super("Vampire", healthPoints, level, stats);
+        this.loot = "Magic item";
     }
-
 
     @Override
     public void castSpell(Creature target) {
@@ -29,19 +28,19 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
     }
 
     @Override
-    public void makeSound() {
-        System.out.println("You're a cuck Edward");
+    public String makeSound() {
+        return "You're a cuck Edward";
     }
 
+    @Override
+    public int getExpReward() {
+        return this.expReward;
+    }
+
+
+    @Override
     public String getLoot() {
         return this.loot;
     }
 
-    public int getExpReward() {
-        return this.xpReward;
-    }
-
-    public void setLoot(String loot) {
-        this.loot = loot;
-    }
 }

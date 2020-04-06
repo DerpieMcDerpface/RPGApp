@@ -19,13 +19,14 @@ public class SkeletonTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);
-        skeleton = new Skeleton(1, 1, [2,1,1]);
+        skeleton = new Skeleton(1, 1, new int[]{2,1,1});
     }
 
     @Test
     public void testDefaultConstructorValues(){
         Assert.assertEquals("Skeleton",skeleton.getName());
         Assert.assertEquals(5, skeleton.getExpReward());
+        Assert.assertEquals("No loot",skeleton.getLoot());
         Assert.assertFalse(skeleton.isDodging());
     }
 
@@ -42,6 +43,6 @@ public class SkeletonTest {
 
     @Test
     public void testGoldDragonMakeSound(){
-        Assert.assertEquals("klklkl",skeleton.makeSound());
+        Assert.assertEquals("Doot doot",skeleton.makeSound());
     }
 }

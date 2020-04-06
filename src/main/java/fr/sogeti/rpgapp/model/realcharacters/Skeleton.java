@@ -3,19 +3,20 @@ package fr.sogeti.rpgapp.model.realcharacters;
 import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
 import fr.sogeti.rpgapp.model.characteroptions.Undead;
+
 public class Skeleton extends Creature implements Undead, Monster {
 
     private String loot;
-    private static final int xpReward = 5;
+    private static final int expReward = 5;
 
-    public Skeleton(String name, int healthPoints, int level, int[] stats, String loot) {
-        super(name, healthPoints, level, stats);
-        this.loot = loot;
+    public Skeleton(int healthPoints, int level, int[] stats) {
+        super("Skeleton", healthPoints, level, stats);
+        this.loot = "No loot";
     }
 
     @Override
-    public void makeSound() {
-        System.out.println("Doot doot !");
+    public String makeSound() {
+        return "Doot doot !";
     }
 
     public String getLoot() {
@@ -23,7 +24,7 @@ public class Skeleton extends Creature implements Undead, Monster {
     }
 
     public int getExpReward() {
-        return this.xpReward;
+        return this.expReward;
     }
 
     public void setLoot(String loot) {

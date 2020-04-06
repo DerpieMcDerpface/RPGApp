@@ -20,9 +20,10 @@ public class VampireTest {
         target = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
-        int[] stats = {5, 5, 5};
         //Vampire(health, level, [str, int, agi])
-        vampire = new Vampire("Vampire", 100, 10, stats, "Magic item");
+
+        vampire = new Vampire(100,10, new int[]{5, 5, 5});
+
     }
 
     @Test

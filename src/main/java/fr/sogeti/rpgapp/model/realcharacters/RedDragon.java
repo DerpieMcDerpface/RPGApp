@@ -2,26 +2,27 @@ package fr.sogeti.rpgapp.model.realcharacters;
 
 import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.characteroptions.Dragon;
+
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
 
 public class RedDragon extends Creature implements Dragon, Monster {
 
     private String loot;
-    private static final int xpReward = 5;
+    private static final int expReward = 5;
 
-    protected RedDragon(String name, int healthPoints, int level, int[] stats, String loot) {
+    protected RedDragon(String name, int healthPoints, int level, int[] stats) {
         super(name, healthPoints, level, stats);
-        this.loot = loot;
+        this.loot = "Huge amount of gold";
     }
 
     @Override
     public void breath() {
-
+        
     }
 
     @Override
-    public void makeSound() {
-
+    public String makeSound() {
+        return "Rawr XD"
     }
 
     public String getLoot() {
@@ -29,10 +30,10 @@ public class RedDragon extends Creature implements Dragon, Monster {
     }
 
     public int getExpReward() {
-        return this.xpReward;
+        return this.expReward;
     }
 
-    public void setLoot(String loot) {
-        this.loot = loot;
+    public void castSpell(Creature target) {
+
     }
 }
