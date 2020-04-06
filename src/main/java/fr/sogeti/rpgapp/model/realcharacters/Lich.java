@@ -18,7 +18,17 @@ public class Lich extends Creature implements Undead, Monster, MagicCaster {
 
     @Override
     public void castSpell(Creature target) {
-        
+        if(target instanceof Undead) {
+            target.heal(this.getIntelligence() * this.getLevel());
+        }
+        else {
+            int damageDealt = this.getIntelligence() * this.getLevel() - (target.getIntelligence()+target.getLevel());
+            if (damageDealt < 2) {
+                target.takeDamage(2);
+            } else {
+                target.takeDamage(damageDealt);
+            }
+        }
     }
 
     @Override

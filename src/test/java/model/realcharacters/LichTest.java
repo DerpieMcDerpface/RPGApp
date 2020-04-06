@@ -47,10 +47,9 @@ public class LichTest {
 
     @Test
     public void testLichSpellOnUndead() {
-        targetUndead = Mockito.mock(Creature.class);
+        targetUndead = Mockito.mock(Lich.class);
         Mockito.when(targetUndead.getLevel()).thenReturn(1);
         Mockito.when(targetUndead.getIntelligence()).thenReturn(10);
-        Mockito.when(targetUndead.getHealthPoints()).thenReturn(100);
 
         int healAmount = (lich.getLevel() * lich.getIntelligence());
 
