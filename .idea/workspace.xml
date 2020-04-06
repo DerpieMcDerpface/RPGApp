@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a064be3-e492-4d7d-a25e-30e62690d3d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/Creature.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/GoldDragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/GoldDragon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Skeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/LichTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/LichTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/RedDragonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/RedDragonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/SkeletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/SkeletonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -26,14 +26,9 @@ public class GoldDragonTest {
     @Test
     public void testDefaultConstructorValues(){
         Assert.assertEquals("Gold Dragon",goldDragon.getName());
-        Assert.assertEquals(100000000, goldDragon.getExpReward());
+        Assert.assertEquals(1000000, goldDragon.getExpReward());
         Assert.assertEquals("Legendary item", goldDragon.getLoot());
         Assert.assertFalse(goldDragon.isDodging());
-    }
-
-    @Test
-    public void testVampireExtendsCharacter(){
-        Assert.assertTrue(goldDragon instanceof Creature);
     }
 
     @Test
@@ -43,8 +38,15 @@ public class GoldDragonTest {
         Assert.assertTrue(goldDragon instanceof MagicCaster);
     }
 
+
+    @Test
+    public void testGoldDragonExtendsCreature(){
+        Assert.assertTrue(goldDragon instanceof Creature);
+    }
+
+
     @Test
     public void testGoldDragonMakeSound(){
-        Assert.assertEquals("groooow",goldDragon.makeSound());
+        Assert.assertEquals("Walala je suis trop fort",goldDragon.makeSound());
     }
 }
