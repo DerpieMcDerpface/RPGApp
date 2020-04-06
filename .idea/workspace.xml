@@ -2,7 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a064be3-e492-4d7d-a25e-30e62690d3d8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Dragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Dragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/MagicCaster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/MagicCaster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Monster.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Monster.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Undead.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/characteroptions/Undead.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,6 +44,28 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RunManager">
+    <configuration name="VampireTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="RPGApp" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.realcharacters.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model.realcharacters" />
+      <option name="MAIN_CLASS_NAME" value="model.realcharacters.VampireTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.VampireTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -54,6 +84,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="552" y="258" key="#Project_Structure/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1585993807375" />
+    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser" timestamp="1586171048206">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1586171048206" />
     <state x="642" y="525" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585995190977">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

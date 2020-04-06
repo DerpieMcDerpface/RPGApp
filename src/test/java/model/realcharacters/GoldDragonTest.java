@@ -28,7 +28,7 @@ public class GoldDragonTest {
         Assert.assertEquals("Gold Dragon",goldDragon.getName());
         Assert.assertEquals(100000000, goldDragon.getExpReward());
         Assert.assertEquals("Legendary item", goldDragon.getLoot());
-        Assert.assertTrue(goldDragon.isDodging());
+        Assert.assertFalse(goldDragon.isDodging());
     }
 
     @Test
