@@ -23,7 +23,13 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
             this.heal(1);
         } else {
             target.takeDamage(damageDealt);
-            this.heal(damageDealt / 2);
+            int cappedHeal = target.getHealthPoints(), healAmount = damageDealt / 2;
+            if (healAmount > cappedHeal) {
+                this.heal(cappedHeal);
+            } else {
+                this.heal(healAmount);
+            }
+
         }
     }
 
