@@ -20,7 +20,7 @@ public class GoldDragonTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);
-        goldDragon = new GolDragon(1000, 20, [15,10,12]);
+        goldDragon = new GoldDragon(1000, 20, new int[]{15,10,12});
     }
 
     @Test
@@ -45,6 +45,6 @@ public class GoldDragonTest {
 
     @Test
     public void testGoldDragonMakeSound(){
-        Assert.assertEquals("groooow",skeleton.makeSound());
+        Assert.assertEquals("groooow",goldDragon.makeSound());
     }
 }

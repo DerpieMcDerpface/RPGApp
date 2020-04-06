@@ -3,9 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="9a064be3-e492-4d7d-a25e-30e62690d3d8" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/RedDragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/RedDragon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/Creature.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/Creature.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/GoldDragon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/GoldDragon.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Skeleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/fr/sogeti/rpgapp/model/realcharacters/Vampire.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/GoldDragonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/LichTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/LichTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/RedDragonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/RedDragonTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/SkeletonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/SkeletonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/model/realcharacters/VampireTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,10 +112,10 @@
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
     <state x="414" y="255" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1586171774524" />
-    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser" timestamp="1586172192259">
+    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser" timestamp="1586172856824">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>
-    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1586172192259" />
+    <state x="765" y="309" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1200/1920.0.1680.1050@0.0.1920.1200" timestamp="1586172856824" />
     <state x="642" y="525" key="#com.intellij.refactoring.move.MoveHandler.SelectRefactoringDialog" timestamp="1585995190977">
       <screen x="0" y="0" width="1920" height="1200" />
     </state>

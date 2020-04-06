@@ -21,7 +21,7 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //Vampire(health, level, [str, int, agi])
-        vampire = new Vampire("Vampire", 100,10, new int[]{5, 5, 5});
+        vampire = new Vampire(100,10, new int[]{5, 5, 5});
     }
 
     @Test

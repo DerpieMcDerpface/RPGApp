@@ -21,7 +21,7 @@ public class LichTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //Lich(health, level, [str, int, agi])
-        lich = new Lich(100, 10,[5, 5, 5]);
+        lich = new Lich("Lich", 100, 10, new int[]{5, 5, 5});
     }
 
     @Test

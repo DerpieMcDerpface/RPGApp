@@ -9,8 +9,8 @@ public class Skeleton extends Creature implements Undead, Monster {
     private String loot;
     private static final int expReward = 5;
 
-    public Skeleton(String name, int healthPoints, int level, int[] stats) {
-        super(name, healthPoints, level, stats);
+    public Skeleton(int healthPoints, int level, int[] stats) {
+        super("Skeleton", healthPoints, level, stats);
         this.loot = "No loot";
     }
 

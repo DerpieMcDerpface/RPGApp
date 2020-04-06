@@ -19,7 +19,7 @@ public class SkeletonTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);
-        skeleton = new Skeleton("Skeleton", 1, 1, new int[]{2,1,1});
+        skeleton = new Skeleton(1, 1, new int[]{2,1,1});
     }
 
     @Test

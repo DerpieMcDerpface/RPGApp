@@ -10,8 +10,8 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
     private String loot;
     private static final int expReward = 250;
 
-    public Vampire(String name, int healthPoints, int level, int[] stats) {
-        super(name, healthPoints, level, stats);
+    public Vampire(int healthPoints, int level, int[] stats) {
+        super("Vampire", healthPoints, level, stats);
         this.loot = "Magic item";
     }
 

@@ -20,7 +20,7 @@ public class RedDragonTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //RedDragon(health, level, [str, int, agi])
-        redDragon = new RedDragon(100, 10,[5, 5, 5]);
+        redDragon = new RedDragon(100, 10,new int[]{5,5,5});
     }
 
     @Test

@@ -120,4 +120,8 @@ public abstract class Creature {
     public boolean isDodging() {
         return isDodging;
     }
+
+    public int getMaximumHealth() {
+        return maximumHealth;
+    }
 }
