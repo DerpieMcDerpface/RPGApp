@@ -1,5 +1,5 @@
 package fr.sogeti.rpgapp.model.characteroptions;
 
 public interface Undead {
-    protected static final int healthRegen = 5;
+    static final int healthRegen = 5;
 }

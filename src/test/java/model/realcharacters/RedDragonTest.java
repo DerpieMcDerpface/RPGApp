@@ -19,8 +19,8 @@ public class RedDragonTest {
         target = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
-        //RedDragon(health, level, [str, int, agi])
-        redDragon = new RedDragon(100, 10,[5, 5, 5]);
+        int[] stats = {5, 5, 5};
+       // redDragon = new RedDragon("Red Dragon", )
     }
 
     @Test
@@ -38,8 +38,8 @@ public class RedDragonTest {
 
     @Test
     public void testClassImplementsCorrectInterfaces() {
-        Assert.assertTrue(lich instanceof Monster);
-        Assert.assertTrue(lich instanceof Dragon);
+        Assert.assertTrue(redDragon instanceof Monster);
+        Assert.assertTrue(redDragon instanceof Dragon);
     }
 
     @Test
@@ -50,7 +50,7 @@ public class RedDragonTest {
         Mockito.when(otherTarget.getHealthPoints()).thenReturn(100);
 
         //I suppose this breath is clearly broken, but better nerf Irelia ¯\_(ツ)_/¯
-        int damageSupposedToBeDealt = (redDragon.getLevel() * redDragon.getIntelligence()));
+        int damageSupposedToBeDealt = (redDragon.getLevel() * redDragon.getIntelligence());
 
         redDragon.breath();
         Mockito.verify(target).takeDamage(damageSupposedToBeDealt);

@@ -18,15 +18,15 @@ public class LichTest {
     @Before
     public void beforeEach() {
         targetNormal = Mockito.mock(Creature.class, Mockito.CALLS_REAL_METHODS);
-        Mockito.when(target.getLevel()).thenReturn(1);
-        Mockito.when(target.getIntelligence()).thenReturn(10);
-        //Lich(health, level, [str, int, agi])
-        lich = new Lich(100, 10,[5, 5, 5]);
+        Mockito.when(targetNormal.getLevel()).thenReturn(1);
+        Mockito.when(targetNormal.getIntelligence()).thenReturn(10);
+        int[] stats = {5, 5, 5};
+        lich = new Lich("Arthas", 100, 10, stats, "Magic wand");
     }
 
     @Test
     public void testDefaultConstructorValues() {
-        Assert.assertEquals("Lich", lich.getName());
+        Assert.assertEquals("Arthas", lich.getName());
         Assert.assertEquals(5, lich.getHealthRegen());
         Assert.assertEquals(500, lich.getExpReward());
         Assert.assertEquals("Magic wand", lich.getLoot());
@@ -52,7 +52,7 @@ public class LichTest {
         Mockito.when(targetUndead.getIntelligence()).thenReturn(10);
         Mockito.when(targetUndead.getHealthPoints()).thenReturn(100);
 
-        int healAmount = (lich.getLevel() * lich.getIntelligence()));
+        int healAmount = (lich.getLevel() * lich.getIntelligence());
 
         lich.castSpell(targetUndead);
         Mockito.verify(targetUndead).heal(healAmount);
@@ -64,7 +64,7 @@ public class LichTest {
         Mockito.when(targetNormal.getIntelligence()).thenReturn(10);
         Mockito.when(targetNormal.getHealthPoints()).thenReturn(100);
 
-        int damageSupposedToBeDealt = (lich.getLevel() * lich.getIntelligence()) - (target.getLevel() + target.getIntelligence());
+        int damageSupposedToBeDealt = (lich.getLevel() * lich.getIntelligence()) - (targetNormal.getLevel() + targetNormal.getIntelligence());
 
         lich.castSpell(targetNormal);
         Mockito.verify(targetNormal).takeDamage(damageSupposedToBeDealt);
@@ -78,7 +78,7 @@ public class LichTest {
 
         int minimumDamage = 2;
 
-        lich.castSpell(target);
-        Mockito.verify(target).takeDamage(minimumDamage);
+        lich.castSpell(targetNormal);
+        Mockito.verify(targetNormal).takeDamage(minimumDamage);
     }
 }
