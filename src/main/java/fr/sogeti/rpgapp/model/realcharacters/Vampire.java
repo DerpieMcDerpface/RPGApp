@@ -34,12 +34,13 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     @Override
     public int getExpReward() {
-        return expReward;
+        return this.expReward;
     }
+
 
     @Override
     public String getLoot() {
-        return loot;
+        return this.loot;
     }
 
 }
