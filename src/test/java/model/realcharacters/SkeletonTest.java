@@ -31,7 +31,7 @@ public class SkeletonTest {
     }
 
     @Test
-    public void testVampireExtendsCharacter(){
+    public void testSkeletonExtendsCharacter(){
         Assert.assertTrue(skeleton instanceof Creature);
     }
 
@@ -42,7 +42,7 @@ public class SkeletonTest {
     }
 
     @Test
-    public void testGoldDragonMakeSound(){
+    public void testSkeletonMakeSound(){
         Assert.assertEquals("Doot doot !",skeleton.makeSound());
     }
 }
