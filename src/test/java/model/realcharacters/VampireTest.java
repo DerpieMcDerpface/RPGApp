@@ -51,13 +51,14 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(100);
+        Vampire vampireSpy = Mockito.spy(vampire);
 
         int damageSupposedToBeDealt = (vampire.getLevel() * vampire.getIntelligence()) - (target.getLevel() + target.getIntelligence());
         int healAmount = damageSupposedToBeDealt / 2;
 
-        vampire.castSpell(target);
+        vampireSpy.castSpell(target);
         Mockito.verify(target).takeDamage(damageSupposedToBeDealt);
-        Mockito.verify(vampire).heal(healAmount);
+        Mockito.verify(vampireSpy).heal(healAmount);
     }
 
     @Test
@@ -65,13 +66,14 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         Mockito.when(target.getHealthPoints()).thenReturn(10);
+        Vampire vampireSpy = Mockito.spy(vampire);
 
         int damageSupposedToBeDealt = (vampire.getLevel() * vampire.getIntelligence()) - (target.getLevel() + target.getIntelligence());
         int cappedHealAmount = target.getHealthPoints();
 
-        vampire.castSpell(target);
+        vampireSpy.castSpell(target);
         Mockito.verify(target).takeDamage(damageSupposedToBeDealt);
-        Mockito.verify(vampire).heal(cappedHealAmount);
+        Mockito.verify(vampireSpy).heal(cappedHealAmount);
     }
 
     @Test
@@ -79,13 +81,14 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1000);
         Mockito.when(target.getIntelligence()).thenReturn(1000);
         Mockito.when(target.getHealthPoints()).thenReturn(1000);
+        Vampire vampireSpy = Mockito.spy(vampire);
 
         int minimumDamage = 2;
         int healAmount = 1;
 
-        vampire.castSpell(target);
+        vampireSpy.castSpell(target);
         Mockito.verify(target).takeDamage(minimumDamage);
-        Mockito.verify(vampire).heal(healAmount);
+        Mockito.verify(vampireSpy).heal(healAmount);
     }
 
 
