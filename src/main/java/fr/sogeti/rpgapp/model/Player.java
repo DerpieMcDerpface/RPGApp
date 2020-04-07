@@ -9,7 +9,7 @@ public class Player extends Creature {
     private int experience;
     private CharacterClass characterClass;
 
-    protected Player(String name, int healthPoints, int level, int[] stats, CharacterClass characterClass) {
+    public Player(String name, int healthPoints, int level, int[] stats, CharacterClass characterClass) {
         super(name, healthPoints, level, stats);
         this.characterClass = characterClass;
         this.money = 0;
@@ -22,7 +22,7 @@ public class Player extends Creature {
                 this.equipement = "Sword;Shield";
                 break;
             case WIZARD:
-                this.equipement = "Magic Staff;";
+                this.equipement = "Magic Staff";
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + characterClass);
@@ -47,14 +47,24 @@ public class Player extends Creature {
 
     public void gainExperience(int expReward){
         this.experience += expReward;
-    }
-
-    public void levelUp(){
         if(this.experience >= 1000){
             this.setLevel(this.getLevel()+1);
             this.experience -= 1000;
             System.out.println(this.getName()+" a gagné un niveau!");
-        } 
+        }
+    }
+
+    public void gainLoot(String loot){
+        if(!loot.equals("")&&!loot.equals("None")){
+            StringBuilder sb = new StringBuilder();
+            if(this.equipement.equals("")){
+                this.equipement = new String(loot);
+            } else{
+                sb.append(equipement).append(";");
+                sb.append(loot);
+                this.equipement = sb.toString();
+            }
+        }
     }
     
     @Override
