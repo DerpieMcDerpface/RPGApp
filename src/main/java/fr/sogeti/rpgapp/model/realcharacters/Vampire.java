@@ -4,11 +4,12 @@ import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.characteroptions.MagicCaster;
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
 import fr.sogeti.rpgapp.model.characteroptions.Undead;
+import fr.sogeti.rpgapp.model.characteroptions.UndeadRegen;
 
 public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     private String loot;
-    private static final int expReward = 250;
+    private static int expReward = 250;
 
     public Vampire(int healthPoints, int level, int[] stats) {
         super("Vampire", healthPoints, level, stats);
@@ -23,7 +24,8 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
             this.heal(1);
         } else {
             target.takeDamage(damageDealt);
-            int cappedHeal = target.getHealthPoints(), healAmount = damageDealt / 2;
+            int cappedHeal = target.getHealthPoints();
+            int healAmount = damageDealt / 2;
             if (healAmount > cappedHeal) {
                 this.heal(cappedHeal);
             } else {
@@ -40,7 +42,7 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     @Override
     public int getExpReward() {
-        return this.expReward;
+        return expReward;
     }
 
 
@@ -49,4 +51,8 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
         return this.loot;
     }
 
+    @Override
+    public int getHealthRegen() {
+        return UndeadRegen.MEDIUM.getValue();
+    }
 }

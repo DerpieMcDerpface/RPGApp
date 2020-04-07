@@ -10,6 +10,7 @@ public abstract class Creature {
     private int level;
     private int[] stats;
     private boolean isDodging;
+    private static final String NEGATIVE_STAT_EXCEPTION = "Error illegal argument, stats can't be negative";
 
     protected Creature(String name, int healthPoints, int level, int[] stats){
         this.name = name;
@@ -68,7 +69,7 @@ public abstract class Creature {
         if(strength >= 0){
             this.stats[0] = strength;
         } else {
-            throw new IllegalArgumentException("Error illegal argument, stats can't be negative");
+            throw new IllegalArgumentException(NEGATIVE_STAT_EXCEPTION);
         }
     }
 
@@ -80,7 +81,7 @@ public abstract class Creature {
         if(intelligence >= 0){
             this.stats[1] = intelligence;
         } else {
-            throw new IllegalArgumentException("Error illegal argument, stats can't be negative");
+            throw new IllegalArgumentException(NEGATIVE_STAT_EXCEPTION);
         }
     }
 
@@ -92,7 +93,7 @@ public abstract class Creature {
         if(agility >= 0){
             this.stats[2] = agility;
         } else {
-            throw new IllegalArgumentException("Error illegal argument, stats can't be negative");
+            throw new IllegalArgumentException(NEGATIVE_STAT_EXCEPTION);
         }
     }
 

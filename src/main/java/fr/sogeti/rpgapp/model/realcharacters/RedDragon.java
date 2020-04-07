@@ -7,8 +7,8 @@ import fr.sogeti.rpgapp.model.characteroptions.Monster;
 
 public class RedDragon extends Creature implements Dragon, Monster {
 
-    private static final String loot = "Huge amount of gold";
-    private static final int expReward = 500;
+    private static String loot = "Huge amount of gold";
+    private static int expReward = 500;
 
     public RedDragon(int healthPoints, int level, int[] stats) {
         super("Red Dragon", healthPoints, level, stats);
@@ -25,7 +25,7 @@ public class RedDragon extends Creature implements Dragon, Monster {
     }
 
     public String getLoot() {
-        return this.loot;
+        return loot;
     }
 
     public int getExpReward() {

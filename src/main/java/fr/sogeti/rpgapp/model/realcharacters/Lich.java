@@ -4,6 +4,7 @@ import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.characteroptions.MagicCaster;
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
 import fr.sogeti.rpgapp.model.characteroptions.Undead;
+import fr.sogeti.rpgapp.model.characteroptions.UndeadRegen;
 
 public class Lich extends Creature implements Undead, Monster, MagicCaster {
 
@@ -36,7 +37,9 @@ public class Lich extends Creature implements Undead, Monster, MagicCaster {
         return "Je suis Arthas";
     }
 
-    public int getHealthRegen() {return this.healthRegen; }
+    public int getHealthRegen() {
+        return UndeadRegen.LOW.getValue(); 
+    }
 
     public String getLoot() {
         return this.loot;

@@ -3,6 +3,7 @@ package fr.sogeti.rpgapp.model.realcharacters;
 import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
 import fr.sogeti.rpgapp.model.characteroptions.Undead;
+import fr.sogeti.rpgapp.model.characteroptions.UndeadRegen;
 
 public class Skeleton extends Creature implements Undead, Monster {
 
@@ -31,4 +32,8 @@ public class Skeleton extends Creature implements Undead, Monster {
         this.loot = loot;
     }
 
+    @Override
+    public int getHealthRegen() {
+        return UndeadRegen.NONE.getValue();
+    }
 }
