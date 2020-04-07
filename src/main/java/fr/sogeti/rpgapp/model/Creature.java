@@ -114,6 +114,10 @@ public abstract class Creature {
         return level;
     }
 
+    protected void setLevel(int level){
+        this.level = level;
+    }
+
     public int[] getStats() {
         return stats;
     }
