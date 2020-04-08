@@ -32,8 +32,11 @@ public class Skeleton extends Creature implements Undead, Monster {
         this.loot = loot;
     }
 
+    //Test 1
     @Override
     public int getHealthRegen() {
         return UndeadRegen.NONE.getValue();
     }
+
+
 }
