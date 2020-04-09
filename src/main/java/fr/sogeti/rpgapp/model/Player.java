@@ -47,7 +47,7 @@ public class Player extends Creature {
 
     public void gainExperience(int expReward){
         this.experience += expReward;
-        if(this.experience >= 1000){
+        while(this.experience >= 1000){
             this.setLevel(this.getLevel()+1);
             this.experience -= 1000;
             System.out.println(this.getName()+" a gagné un niveau!");
