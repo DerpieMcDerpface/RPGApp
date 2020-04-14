@@ -55,9 +55,5 @@ public class RPGAppMain {
         frame.setVisible(true);
         frame.setSize(1200,800);
         frame.setLocationRelativeTo(null);
-
-
-
-
     }
 }
