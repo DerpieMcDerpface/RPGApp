@@ -43,19 +43,4 @@ public class RedDragonTest {
         Assert.assertTrue(redDragon instanceof Monster);
         Assert.assertTrue(redDragon instanceof Dragon);
     }
-
-    @Test
-    public void testRedDragonBreathOnMonsters() {
-        otherTarget = Mockito.mock(Creature.class);
-        Mockito.when(otherTarget.getLevel()).thenReturn(1);
-        Mockito.when(otherTarget.getIntelligence()).thenReturn(10);
-        Mockito.when(otherTarget.getHealthPoints()).thenReturn(100);
-
-        int damageSupposedToBeDealt = (redDragon.getLevel() * redDragon.getIntelligence());
-
-        redDragon.breath();
-        Mockito.verify(target).takeDamage(damageSupposedToBeDealt);
-        Mockito.verify(otherTarget).takeDamage(damageSupposedToBeDealt);
-    }
-
 }
