@@ -69,6 +69,25 @@ public class CombatUI {
         logArea.append(msg);
     }
 
+    public void disableAll() {
+        attackBtn1.setEnabled(false);
+        dodgeBtn1.setEnabled(false);
+        spellBtn1.setEnabled(false);
+        attackBtn2.setEnabled(false);
+        dodgeBtn2.setEnabled(false);
+        spellBtn2.setEnabled(false);
+        mainPanel.repaint();
+    }
+
+    public void updateUI(int healthBar1Value, int healthBar2Value, int expBar1Value, String nameLabel1Text, String nameLabel2Text, String levelField1Text, String levelField2Text ) {
+        healthBar1.setValue(healthBar1Value);
+        healthBar2.setValue(healthBar2Value);
+        expBar1.setValue(expBar1Value);
+        nameLabel1.setText(nameLabel1Text);
+        nameLabel2.setText(nameLabel2Text);
+        levelField1.setText(levelField1Text);
+        levelField2.setText(levelField2Text);
+    }
 
     public JPanel getMainPanel() {
         return mainPanel;

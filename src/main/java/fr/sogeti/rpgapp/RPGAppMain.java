@@ -28,7 +28,7 @@ public class RPGAppMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.playerAttack());
-                redraw();
+                updateUI();
                 playerTurn = false;
             }
         });
@@ -37,7 +37,7 @@ public class RPGAppMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.playerDodge());
-                redraw();
+                updateUI();
                 playerTurn = false;
             }
         });
@@ -47,7 +47,7 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(">Wingardium leviosah\n");
                 userInterface.getLogArea().append(">Nothing happened\n");
-                redraw();
+                updateUI();
                 playerTurn = false;
             }
         });
@@ -57,7 +57,7 @@ public class RPGAppMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.monsterAttack());
-                redraw();
+                updateUI();
                 playerTurn = true;
             }
         });
@@ -66,7 +66,7 @@ public class RPGAppMain {
             @Override
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.monsterDodge());
-                redraw();
+                updateUI();
                 playerTurn = true;
             }
         });
@@ -76,20 +76,21 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(">Wingardium leviosah\n");
                 userInterface.getLogArea().append(">Nothing happened\n");
-                redraw();
+                updateUI();
                 playerTurn = true;
             }
         });
     }
 
-    public void redraw() {
-        this.getCombatUI().getHealthBar1().setValue(this.controller.updatePlayerHpBar());
-        this.getCombatUI().getHealthBar2().setValue(this.controller.updateMonsterHpBar());
-        this.getCombatUI().getExpBar1().setValue(this.controller.updatePlayerXpBar());
-        this.getCombatUI().getNameLabel1().setText(this.controller.updatePlayerName());
-        this.getCombatUI().getNameLabel2().setText(this.controller.updateMonsterName());
-        this.getCombatUI().getLevelField1().setText("Level : " + Integer.toString(this.controller.updatePlayerLevelLabel()));
-        this.getCombatUI().getLevelField2().setText("Level : " + Integer.toString(this.controller.updateMonsterLevelLabel()));
+    public void updateUI() {
+        int playerHealth = this.controller.updatePlayerHpBar();
+        int monsterHealth = this.controller.updateMonsterHpBar();
+        int playerXP = this.controller.updatePlayerXpBar();
+        String playerName = this.controller.updatePlayerName();
+        String monsterName = this.controller.updateMonsterName();
+        String playerLevel = "Level : " + Integer.toString(this.controller.updatePlayerLevelLabel());
+        String monsterLevel = "Level : " + Integer.toString(this.controller.updateMonsterLevelLabel());
+        userInterface.updateUI(playerHealth, monsterHealth, playerXP, playerName, monsterName, playerLevel, monsterLevel);
     }
 
     public void setController(Player player, Creature monster) {
@@ -112,6 +113,7 @@ public class RPGAppMain {
         frame.setVisible(true);
         frame.setSize(1200, 800);
         frame.setLocationRelativeTo(null);
+        updateUI();
 
         this.playerTurn = true;
         if (this.controller.getType() == CombatControllerType.ONE_ON_ONE) {
@@ -131,6 +133,7 @@ public class RPGAppMain {
                 sb.append(">XP won : ").append(temporaryCast.getExpReward()).append("\n").append("Loot earned : ").append(temporaryCast.getLoot()).append("\n");
                 this.userInterface.writeMessage(sb.toString());
             }
+            userInterface.disableAll();
 
         } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies
