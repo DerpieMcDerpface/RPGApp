@@ -22,9 +22,7 @@ public class GoldDragon extends Creature implements Dragon, MagicCaster, Monster
     }
 
     @Override
-    public void castSpell(Creature target) {
-        target.takeDamage(target.getMaximumHealth());
-    }
+    public void castSpell(Creature target) { target.takeDamage(target.getMaximumHealth()); }
 
     @Override
     public String makeSound() {

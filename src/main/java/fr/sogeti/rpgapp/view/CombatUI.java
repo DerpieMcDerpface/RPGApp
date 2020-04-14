@@ -32,53 +32,8 @@ public class CombatUI {
     private JLabel nameLabel2;
     private JLabel nameLabel1;
 
-    private CombatController controller;
 
     public CombatUI() {
-        //Action listener for players
-        attackBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : damage monster and show message in log panel
-            }
-        });
-
-        dodgeBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : set Player.isDodging to true and show message in log panel
-            }
-        });
-
-        spellBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : use player spell and show message in log panel
-            }
-        });
-
-        //Action listeners for monster
-        attackBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : damage player and show message in log panel
-            }
-        });
-
-        dodgeBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : set Monster.isDodging to true and show message in log panel
-            }
-        });
-
-        spellBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : use monster spell and show message in log panel
-            }
-        });
-
         addBtn1.setBackground(Color.DARK_GRAY);
         addBtn2.setBackground(Color.DARK_GRAY);
         attackBtn1.setBackground(Color.DARK_GRAY);
@@ -89,7 +44,6 @@ public class CombatUI {
         spellBtn2.setBackground(Color.DARK_GRAY);
         logArea.setBackground(Color.GRAY);
     }
-
 
     public void switchEnabledPlayerButtons() {
         if (attackBtn1.isEnabled()) {
@@ -115,6 +69,8 @@ public class CombatUI {
             dodgeBtn2.setEnabled(true);
         }
     }
+
+
 
     public JPanel getMainPanel() {
         return mainPanel;
@@ -184,7 +140,4 @@ public class CombatUI {
         return nameLabel1;
     }
 
-    public CombatController getController() {
-        return controller;
-    }
 }
