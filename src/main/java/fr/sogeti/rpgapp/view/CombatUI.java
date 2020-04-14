@@ -80,6 +80,7 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : use monster spell and show message in log panel
+
             }
         });
 
@@ -94,48 +95,102 @@ public class CombatUI {
         logArea.setBackground(Color.GRAY);
     }
 
-    public void addController(Player player, Creature monster){
-        this.controller = new CombatController(player,monster);
-    }
-
-    public boolean runFight(){
-        if(controller.getType() == CombatControllerType.ONE_ON_ONE){
-            while (controller.getPlayer().getHealthPoints()>0 && controller.getCreaturesList().get(0).getHealthPoints()>0){
-                //TO-DO : Implement combat turns for one on one fights
 
 
-
-            }
-        } else if(controller.getType() == CombatControllerType.MULTIPLE_ENEMIES){
-            // TO-DO Next sprint : implement combot for multiples enemies.
+    public void switchEnabledPlayerButtons() {
+        if (attackBtn1.isEnabled()) {
+            spellBtn1.setEnabled(false);
+            attackBtn1.setEnabled(false);
+            dodgeBtn1.setEnabled(false);
         } else {
-            // ERROR ?
+            //Spell not implemented for player yet.
+            //spellBtn1.setEnabled(true);
+            attackBtn1.setEnabled(true);
+            dodgeBtn1.setEnabled(true);
         }
-
-        return true;
     }
 
-
-
-    public static void main(String[] args) {
-        Player player = new Player("Arthur",50,2, new int[]{15,5,5}, CharacterClass.FIGHTER);
-        Creature monster = new Skeleton(40,2, new int[]{5,5,5});
-
-        CombatUI combatUI = new CombatUI();
-        combatUI.addController(player,monster);
-
-        JFrame frame = new JFrame("RPG App");
-        frame.setContentPane(combatUI.mainPanel);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1200,800);
-        frame.setLocationRelativeTo(null);
-
-
-
-
-
+    public void switchEnabledMonsterButtons(){
+        if (attackBtn2.isEnabled()) {
+            spellBtn2.setEnabled(false);
+            attackBtn2.setEnabled(false);
+            dodgeBtn2.setEnabled(false);
+        } else {
+            spellBtn2.setEnabled(true);
+            attackBtn2.setEnabled(true);
+            dodgeBtn2.setEnabled(true);
+        }
     }
 
+    public JPanel getMainPanel() {
+        return mainPanel;
+    }
+
+    public JTextArea getLogArea() {
+        return logArea;
+    }
+
+    public JButton getAttackBtn1() {
+        return attackBtn1;
+    }
+
+    public JButton getDodgeBtn1() {
+        return dodgeBtn1;
+    }
+
+    public JButton getSpellBtn1() {
+        return spellBtn1;
+    }
+
+    public JButton getAddBtn1() {
+        return addBtn1;
+    }
+
+    public JButton getAttackBtn2() {
+        return attackBtn2;
+    }
+
+    public JButton getDodgeBtn2() {
+        return dodgeBtn2;
+    }
+
+    public JButton getSpellBtn2() {
+        return spellBtn2;
+    }
+
+    public JButton getAddBtn2() {
+        return addBtn2;
+    }
+
+    public JLabel getLevelField1() {
+        return levelField1;
+    }
+
+    public JLabel getLevelField2() {
+        return levelField2;
+    }
+
+    public JProgressBar getHealthBar1() {
+        return healthBar1;
+    }
+
+    public JProgressBar getExpBar1() {
+        return expBar1;
+    }
+
+    public JProgressBar getHealthBar2() {
+        return healthBar2;
+    }
+
+    public JLabel getNameLabel2() {
+        return nameLabel2;
+    }
+
+    public JLabel getNameLabel1() {
+        return nameLabel1;
+    }
+
+    public CombatController getController() {
+        return controller;
+    }
 }
