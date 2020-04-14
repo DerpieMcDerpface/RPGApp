@@ -28,7 +28,7 @@ public abstract class Creature {
         }
     }
 
-    public void attack(Creature target){
+    public int attack(Creature target){
         int attackDamage = 0;
         attackDamage += this.getLevel() + this.getStrength() - target.getLevel();
 
@@ -37,6 +37,7 @@ public abstract class Creature {
         if(attackDamage < 0) attackDamage = 0;
 
         target.takeDamage(attackDamage);
+        return attackDamage;
     }
 
     public void dodge(){

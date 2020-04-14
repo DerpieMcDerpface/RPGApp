@@ -68,17 +68,17 @@ public class Player extends Creature {
     }
     
     @Override
-    public void attack(Creature target){
+    public int attack(Creature target){
         switch (this.characterClass){
             case ROGUE:
                 target.takeDamage(this.getAgility()*this.getLevel());
-                break;
+                return this.getAgility()*this.getLevel();
             case WIZARD:
                 target.takeDamage(this.getIntelligence()*this.getLevel());
-                break;
+                return this.getIntelligence()*this.getLevel();
             case FIGHTER:
                 target.takeDamage(this.getStrength()*this.getLevel());
-                break;
+                return this.getStrength()*this.getLevel();
             default:
                 throw new IllegalStateException("Unexpected value: " + this.characterClass);
         }
