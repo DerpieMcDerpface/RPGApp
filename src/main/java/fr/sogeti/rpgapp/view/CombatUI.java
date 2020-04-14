@@ -40,7 +40,6 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : damage monster and show message in log panel
-
             }
         });
 
@@ -55,7 +54,6 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : use player spell and show message in log panel
-
             }
         });
 
@@ -64,7 +62,6 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : damage player and show message in log panel
-
             }
         });
 
@@ -72,7 +69,6 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : set Monster.isDodging to true and show message in log panel
-
             }
         });
 
@@ -80,7 +76,6 @@ public class CombatUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 //TO-DO : use monster spell and show message in log panel
-
             }
         });
 
@@ -96,7 +91,6 @@ public class CombatUI {
     }
 
 
-
     public void switchEnabledPlayerButtons() {
         if (attackBtn1.isEnabled()) {
             spellBtn1.setEnabled(false);
@@ -110,7 +104,7 @@ public class CombatUI {
         }
     }
 
-    public void switchEnabledMonsterButtons(){
+    public void switchEnabledMonsterButtons() {
         if (attackBtn2.isEnabled()) {
             spellBtn2.setEnabled(false);
             attackBtn2.setEnabled(false);
