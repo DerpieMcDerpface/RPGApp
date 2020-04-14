@@ -38,7 +38,7 @@
           <enabled value="false"/>
           <font name="Monospaced" size="16" style="1"/>
           <foreground color="-1707265"/>
-          <text value="Use Spell"/>
+          <text value="Use Spell (WIP)"/>
         </properties>
       </component>
       <component id="9d751" class="javax.swing.JButton" binding="addBtn1">
@@ -49,7 +49,7 @@
           <enabled value="false"/>
           <font name="Monospaced" size="16" style="1"/>
           <foreground color="-1707265"/>
-          <text value="New Player"/>
+          <text value="New Player (WIP)"/>
         </properties>
       </component>
       <component id="d4ef6" class="javax.swing.JLabel" binding="levelField1">
@@ -111,7 +111,7 @@
           <enabled value="false"/>
           <font name="Monospaced" size="16" style="1"/>
           <foreground color="-1707265"/>
-          <text value="New Monster"/>
+          <text value="New Monster (WIP)"/>
         </properties>
       </component>
       <component id="77b1a" class="javax.swing.JProgressBar" binding="healthBar1">
