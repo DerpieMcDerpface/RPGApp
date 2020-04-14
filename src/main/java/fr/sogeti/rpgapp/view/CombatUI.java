@@ -64,7 +64,8 @@ public class CombatUI {
             attackBtn2.setEnabled(false);
             dodgeBtn2.setEnabled(false);
         } else {
-            spellBtn2.setEnabled(true);
+            //Not implemented yet 
+            //spellBtn2.setEnabled(true);
             attackBtn2.setEnabled(true);
             dodgeBtn2.setEnabled(true);
         }
