@@ -9,7 +9,7 @@ import fr.sogeti.rpgapp.model.characteroptions.UndeadRegen;
 public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     private String loot;
-    private static int expReward = 250;
+    private int expReward = 250;
 
     public Vampire(int healthPoints, int level, int[] stats) {
         super("Vampire", healthPoints, level, stats);
@@ -42,7 +42,7 @@ public class Vampire extends Creature implements Undead, Monster, MagicCaster {
 
     @Override
     public int getExpReward() {
-        return expReward;
+        return this.expReward;
     }
 
 
