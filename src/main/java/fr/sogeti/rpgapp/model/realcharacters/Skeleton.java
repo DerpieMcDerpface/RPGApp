@@ -8,7 +8,7 @@ import fr.sogeti.rpgapp.model.characteroptions.UndeadRegen;
 public class Skeleton extends Creature implements Undead, Monster {
 
     private String loot;
-    private static final int expReward = 5;
+    private int expReward = 5;
 
     public Skeleton(int healthPoints, int level, int[] stats) {
         super("Skeleton", healthPoints, level, stats);
