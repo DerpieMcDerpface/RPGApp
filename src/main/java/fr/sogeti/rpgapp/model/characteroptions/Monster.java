@@ -1,8 +1,8 @@
 package fr.sogeti.rpgapp.model.characteroptions;
 
 public interface Monster {
-    String LOOT = "";
-    int EXP_REWARD = 0;
+    String loot = "";
+    int expReward = 0;
 
     String makeSound();
 
