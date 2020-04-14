@@ -1,5 +1,10 @@
 package fr.sogeti.rpgapp.view;
 
+import fr.sogeti.rpgapp.model.Player;
+import fr.sogeti.rpgapp.model.characteroptions.CharacterClass;
+import fr.sogeti.rpgapp.model.characteroptions.Monster;
+import fr.sogeti.rpgapp.model.realcharacters.Skeleton;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -29,6 +34,7 @@ public class CombatUI {
         attackBtn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TO-DO : damage monster and show message in log panel
 
             }
         });
@@ -36,13 +42,14 @@ public class CombatUI {
         dodgeBtn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TO-DO : set Player.isDodging to true and show message in log panel
             }
         });
 
         spellBtn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TO-DO : use player spell and show message in log panel
 
             }
         });
@@ -51,6 +58,7 @@ public class CombatUI {
         attackBtn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TO-DO : damage player and show message in log panel
 
             }
         });
@@ -58,6 +66,7 @@ public class CombatUI {
         dodgeBtn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                //TO-DO : set Monster.isDodging to true and show message in log panel
 
             }
         });
@@ -65,7 +74,7 @@ public class CombatUI {
         spellBtn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                //TO-DO : use monster spell and show message in log panel
             }
         });
 
@@ -90,6 +99,12 @@ public class CombatUI {
         frame.setVisible(true);
         frame.setSize(1200,800);
         frame.setLocationRelativeTo(null);
+
+        Player player = new Player("Arthur",50,2, new int[]{15,5,5}, CharacterClass.FIGHTER);
+        Monster monster = new Skeleton(40,2, new int[]{5,5,5});
+
+
+
     }
 
 }
