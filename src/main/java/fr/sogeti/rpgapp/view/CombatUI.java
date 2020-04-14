@@ -1,5 +1,8 @@
 package fr.sogeti.rpgapp.view;
 
+import fr.sogeti.rpgapp.controller.CombatController;
+import fr.sogeti.rpgapp.controller.CombatControllerType;
+import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.Player;
 import fr.sogeti.rpgapp.model.characteroptions.CharacterClass;
 import fr.sogeti.rpgapp.model.characteroptions.Monster;
@@ -28,6 +31,8 @@ public class CombatUI {
     private JProgressBar healthBar2;
     private JLabel nameLabel2;
     private JLabel nameLabel1;
+
+    private CombatController controller;
 
     public CombatUI() {
         //Action listener for players
@@ -87,21 +92,47 @@ public class CombatUI {
         spellBtn1.setBackground(Color.DARK_GRAY);
         spellBtn2.setBackground(Color.DARK_GRAY);
         logArea.setBackground(Color.GRAY);
+    }
 
+    public void addController(Player player, Creature monster){
+        this.controller = new CombatController(player,monster);
+    }
+
+    public boolean runFight(){
+        if(controller.getType() == CombatControllerType.ONE_ON_ONE){
+            while (controller.getPlayer().getHealthPoints()>0 && controller.getCreaturesList().get(0).getHealthPoints()>0){
+                //TO-DO : Implement combat turns for one on one fights
+
+
+
+            }
+        } else if(controller.getType() == CombatControllerType.MULTIPLE_ENEMIES){
+            // TO-DO Next sprint : implement combot for multiples enemies.
+        } else {
+            // ERROR ?
+        }
+
+        return true;
     }
 
 
+
     public static void main(String[] args) {
+        Player player = new Player("Arthur",50,2, new int[]{15,5,5}, CharacterClass.FIGHTER);
+        Creature monster = new Skeleton(40,2, new int[]{5,5,5});
+
+        CombatUI combatUI = new CombatUI();
+        combatUI.addController(player,monster);
+
         JFrame frame = new JFrame("RPG App");
-        frame.setContentPane(new CombatUI().mainPanel);
+        frame.setContentPane(combatUI.mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setSize(1200,800);
         frame.setLocationRelativeTo(null);
 
-        Player player = new Player("Arthur",50,2, new int[]{15,5,5}, CharacterClass.FIGHTER);
-        Monster monster = new Skeleton(40,2, new int[]{5,5,5});
+
 
 
 

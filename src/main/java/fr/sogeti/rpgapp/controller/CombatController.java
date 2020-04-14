@@ -25,22 +25,15 @@ public class CombatController {
         this.creaturesList.add(monster);
     }
 
-    public boolean runFight(){
-        if(this.type == CombatControllerType.ONE_ON_ONE){
-            while (player.getHealthPoints()>0 && creaturesList.get(0).getHealthPoints()>0){
-                //TO-DO : Implement combat turns for one on one fights
-
-
-
-            }
-        } else if(this.type == CombatControllerType.MULTIPLE_ENEMIES){
-            // TO-DO Next sprint : implement combot for multiples enemies.
-        } else {
-            // ERROR ?
-        }
-
-        return true;
+    public CombatControllerType getType() {
+        return type;
     }
 
+    public Player getPlayer() {
+        return player;
+    }
 
+    public List<Creature> getCreaturesList() {
+        return creaturesList;
+    }
 }
