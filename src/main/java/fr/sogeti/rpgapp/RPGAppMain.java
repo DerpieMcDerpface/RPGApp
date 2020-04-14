@@ -5,6 +5,7 @@ import fr.sogeti.rpgapp.controller.CombatControllerType;
 import fr.sogeti.rpgapp.model.Creature;
 import fr.sogeti.rpgapp.model.Player;
 import fr.sogeti.rpgapp.model.characteroptions.CharacterClass;
+import fr.sogeti.rpgapp.model.characteroptions.Monster;
 import fr.sogeti.rpgapp.model.realcharacters.Skeleton;
 import fr.sogeti.rpgapp.view.CombatUI;
 
@@ -16,6 +17,7 @@ public class RPGAppMain {
 
     private CombatController controller;
     private CombatUI userInterface;
+    private boolean playerTurn;
 
     public RPGAppMain() {
         CombatUI combatUI = new CombatUI();
@@ -27,6 +29,7 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.playerAttack());
                 redraw();
+                playerTurn = false;
             }
         });
 
@@ -35,6 +38,7 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.playerDodge());
                 redraw();
+                playerTurn = false;
             }
         });
 
@@ -44,6 +48,7 @@ public class RPGAppMain {
                 userInterface.getLogArea().append(">Wingardium leviosah\n");
                 userInterface.getLogArea().append(">Nothing happened\n");
                 redraw();
+                playerTurn = false;
             }
         });
 
@@ -53,6 +58,7 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.monsterAttack());
                 redraw();
+                playerTurn = true;
             }
         });
 
@@ -61,6 +67,7 @@ public class RPGAppMain {
             public void actionPerformed(ActionEvent e) {
                 userInterface.getLogArea().append(controller.monsterDodge());
                 redraw();
+                playerTurn = true;
             }
         });
 
@@ -70,6 +77,7 @@ public class RPGAppMain {
                 userInterface.getLogArea().append(">Wingardium leviosah\n");
                 userInterface.getLogArea().append(">Nothing happened\n");
                 redraw();
+                playerTurn = true;
             }
         });
     }
@@ -97,11 +105,34 @@ public class RPGAppMain {
     }
 
     public boolean runFight() {
-        if (controller.getType() == CombatControllerType.ONE_ON_ONE) {
-            while (controller.getPlayer().getHealthPoints() > 0 && controller.getCreaturesList().get(0).getHealthPoints() > 0) {
-                //TO-DO : Implement combat turns for one on one fights
+        JFrame frame = new JFrame("RPG App");
+        frame.setContentPane(this.getCombatUI().getMainPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(1200, 800);
+        frame.setLocationRelativeTo(null);
+
+        this.playerTurn = true;
+        if (this.controller.getType() == CombatControllerType.ONE_ON_ONE) {
+            while (this.controller.getPlayer().getHealthPoints() > 0 && this.controller.getCreaturesList().get(0).getHealthPoints() > 0) {
+                if (this.playerTurn) {
+                    this.userInterface.switchEnabledPlayerButtons();
+                } else {
+                    this.userInterface.switchEnabledMonsterButtons();
+                }
             }
-        } else if (controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
+            if (this.controller.getPlayer().getHealthPoints() < 0) {
+                this.userInterface.writeMessage(">You lost the fight !\n");
+            } else if (this.controller.getCreaturesList().get(0).getHealthPoints() < 0) {
+                Monster temporaryCast = (Monster) this.controller.getCreaturesList().get(0);
+                this.userInterface.writeMessage(">You won the fight !\n");
+                StringBuffer sb = new StringBuffer();
+                sb.append(">XP won : ").append(temporaryCast.getExpReward()).append("\n").append("Loot earned : ").append(temporaryCast.getLoot()).append("\n");
+                this.userInterface.writeMessage(sb.toString());
+            }
+
+        } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies
         } else {
             // ERROR ?
@@ -117,17 +148,6 @@ public class RPGAppMain {
         Creature monster = new Skeleton(40, 2, new int[]{10, 10, 10});
 
         app.setController(player, monster);
-
-        JFrame frame = new JFrame("RPG App");
-        frame.setContentPane(app.getCombatUI().getMainPanel());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1200, 800);
-        app.redraw();
-        frame.setLocationRelativeTo(null);
-
-
-
+        app.runFight();
     }
 }

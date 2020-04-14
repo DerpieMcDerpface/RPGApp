@@ -46,31 +46,28 @@ public class CombatUI {
     }
 
     public void switchEnabledPlayerButtons() {
-        if (attackBtn1.isEnabled()) {
-            spellBtn1.setEnabled(false);
-            attackBtn1.setEnabled(false);
-            dodgeBtn1.setEnabled(false);
-        } else {
-            //Spell not implemented for player yet.
-            //spellBtn1.setEnabled(true);
-            attackBtn1.setEnabled(true);
-            dodgeBtn1.setEnabled(true);
-        }
+        attackBtn1.setEnabled(true);
+        dodgeBtn1.setEnabled(true);
+        spellBtn1.setEnabled(true);
+        attackBtn2.setEnabled(false);
+        dodgeBtn2.setEnabled(false);
+        spellBtn2.setEnabled(false);
+        mainPanel.repaint();
     }
 
     public void switchEnabledMonsterButtons() {
-        if (attackBtn2.isEnabled()) {
-            spellBtn2.setEnabled(false);
-            attackBtn2.setEnabled(false);
-            dodgeBtn2.setEnabled(false);
-        } else {
-            //Not implemented yet 
-            //spellBtn2.setEnabled(true);
-            attackBtn2.setEnabled(true);
-            dodgeBtn2.setEnabled(true);
-        }
+        attackBtn1.setEnabled(false);
+        dodgeBtn1.setEnabled(false);
+        spellBtn1.setEnabled(false);
+        attackBtn2.setEnabled(true);
+        dodgeBtn2.setEnabled(true);
+        spellBtn2.setEnabled(true);
+        mainPanel.repaint();
     }
 
+    public void writeMessage(String msg) {
+        logArea.append(msg);
+    }
 
 
     public JPanel getMainPanel() {
