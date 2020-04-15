@@ -152,5 +152,15 @@ public class RPGAppMain {
 
         app.setController(player, monster);
         app.runFight();
+
+        JFrame frame = new JFrame("RPG App");
+        frame.setContentPane(app.getCombatUI().getMainPanel());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+        frame.setSize(1200, 800);
+        frame.setLocationRelativeTo(null);
+
+        app.runFight();
     }
 }
