@@ -91,15 +91,6 @@ public class RPGAppMain {
     }
 
     public void runFight(boolean isPlayerTurn) {
-        JFrame frame = new JFrame("RPG App");
-        frame.setContentPane(this.getCombatUI().getMainPanel());
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1200, 800);
-        frame.setLocationRelativeTo(null);
-        updateUI();
-
         this.playerTurn = isPlayerTurn;
         if (this.controller.getType() == CombatControllerType.ONE_ON_ONE) {
             while (this.controller.getPlayer().getHealthPoints() > 0 && this.controller.getCreaturesList().get(0).getHealthPoints() > 0) {

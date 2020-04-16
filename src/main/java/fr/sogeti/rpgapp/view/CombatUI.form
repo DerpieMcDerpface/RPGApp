@@ -122,7 +122,9 @@
             <maximum-size width="-1" height="20"/>
           </grid>
         </constraints>
-        <properties/>
+        <properties>
+          <indeterminate value="false"/>
+        </properties>
       </component>
       <component id="af869" class="javax.swing.JProgressBar" binding="expBar1">
         <constraints>

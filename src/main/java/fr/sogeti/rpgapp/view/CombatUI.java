@@ -43,6 +43,8 @@ public class CombatUI {
         spellBtn1.setBackground(Color.DARK_GRAY);
         spellBtn2.setBackground(Color.DARK_GRAY);
         logArea.setBackground(Color.GRAY);
+        healthBar1.setForeground(Color.GREEN);
+        healthBar2.setForeground(Color.GREEN);
     }
 
     public void switchEnabledPlayerButtons() {
