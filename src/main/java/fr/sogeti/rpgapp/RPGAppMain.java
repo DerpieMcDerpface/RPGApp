@@ -90,17 +90,8 @@ public class RPGAppMain {
         return this.userInterface;
     }
 
-    public void runFight() {
-        JFrame frame = new JFrame("RPG App");
-        frame.setContentPane(this.getCombatUI().getMainPanel());
-        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
-        frame.pack();
-        frame.setVisible(true);
-        frame.setSize(1200, 800);
-        frame.setLocationRelativeTo(null);
-        updateUI();
-
-        this.playerTurn = true;
+    public void runFight(boolean isPlayerTurn) {
+        this.playerTurn = isPlayerTurn;
         if (this.controller.getType() == CombatControllerType.ONE_ON_ONE) {
             while (this.controller.getPlayer().getHealthPoints() > 0 && this.controller.getCreaturesList().get(0).getHealthPoints() > 0) {
                 if (this.playerTurn) {
@@ -116,7 +107,7 @@ public class RPGAppMain {
                 this.userInterface.writeMessage(">You won the fight !\n");
                 this.userInterface.writeMessage(">XP won : " + temporaryCast.getExpReward() + "\n" + "Loot earned : " + temporaryCast.getLoot() + "\n");
             }
-            userInterface.disableAll();
+            //userInterface.disableAll();
 
         } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies
@@ -134,8 +125,6 @@ public class RPGAppMain {
         Creature monster = new Skeleton(40, 2, new int[]{10, 10, 10});
 
         app.setController(player, monster);
-        app.runFight();
-
         JFrame frame = new JFrame("RPG App");
         frame.setContentPane(app.getCombatUI().getMainPanel());
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -144,6 +133,6 @@ public class RPGAppMain {
         frame.setSize(1200, 800);
         frame.setLocationRelativeTo(null);
 
-        app.runFight();
+        app.runFight(true);
     }
 }

@@ -11,7 +11,6 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 public class VampireTest {
-
     Creature target;
     Vampire vampire;
 
@@ -21,9 +20,7 @@ public class VampireTest {
         Mockito.when(target.getLevel()).thenReturn(1);
         Mockito.when(target.getIntelligence()).thenReturn(10);
         //Vampire(health, level, [str, int, agi])
-
         vampire = new Vampire(100,10, new int[]{5, 5, 5});
-
     }
 
     @Test

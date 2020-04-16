@@ -40,7 +40,7 @@ public class CombatController {
 
 
     public String playerAttack() {
-        return ">" + this.player.getName() + " attacked " + this.creaturesList.get(0).getName() + " for " + this.player.attack(this.creaturesList.get(0)) + " dammage\n";
+        return ">" + this.player.getName() + " attacked " + this.creaturesList.get(0).getName() + " for " + this.player.attack(this.creaturesList.get(0)) + " damage\n";
     }
 
     public String playerDodge() {
@@ -59,7 +59,7 @@ public class CombatController {
     }
 
     public String monsterAttack() {
-        return ">" + this.creaturesList.get(0).getName() + " attacked " + this.player.getName() + " for " + this.creaturesList.get(0).attack(this.player) + " dammage\n";
+        return ">" + this.creaturesList.get(0).getName() + " attacked " + this.player.getName() + " for " + this.creaturesList.get(0).attack(this.player) + " damage\n";
     }
 
     public String monsterDodge() {
@@ -69,7 +69,7 @@ public class CombatController {
 
     public String monsterSpell() {
         if (this.creaturesList.get(0) instanceof MagicCaster) {
-            return ">" + this.creaturesList.get(0).getName() + " cast a spell on " + this.player + " dealing some dammages\n";
+            return ">" + this.creaturesList.get(0).getName() + " cast a spell on " + this.player + " dealing some damages\n";
         } else {
             return "I cannot cast spells :'(\n";
         }
