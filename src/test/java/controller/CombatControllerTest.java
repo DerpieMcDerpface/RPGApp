@@ -27,8 +27,8 @@ public class CombatControllerTest {
 
     @Test
     public void testConstructorWithOneMonster() {
-        Assert.assertEquals(combatController.getType(), CombatControllerType.ONE_ON_ONE);
-        Assert.assertEquals(combatController.getCreaturesList().get(0), monster);
+        Assert.assertEquals(CombatControllerType.ONE_ON_ONE, combatController.getType());
+        Assert.assertEquals(monster, combatController.getCreaturesList().get(0));
     }
 
     @Test
@@ -40,24 +40,22 @@ public class CombatControllerTest {
         creaturesList.add(monster2);
         CombatController combatControllerMultipleMonsters = new CombatController(player, monster, monster2);
 
-        Assert.assertEquals(combatControllerMultipleMonsters.getType(), CombatControllerType.MULTIPLE_ENEMIES);
-        Assert.assertEquals(combatControllerMultipleMonsters.getCreaturesList(), creaturesList);
-        Assert.assertEquals(combatControllerMultipleMonsters.getPlayer(), player);
+        Assert.assertEquals(CombatControllerType.MULTIPLE_ENEMIES, combatControllerMultipleMonsters.getType());
+        Assert.assertEquals(creaturesList, combatControllerMultipleMonsters.getCreaturesList());
+        Assert.assertEquals(player, combatControllerMultipleMonsters.getPlayer());
     }
 
     @Test
     public void testPlayerAttack() {
         Mockito.when(monster.getName()).thenReturn("monster");
         int damageExpected = player.getLevel() * player.getStrength();
-        StringBuffer msgExpected = new StringBuffer();
-        msgExpected.append(">John attacked monster for ").append(damageExpected).append(" damage\n");
-        Assert.assertEquals(combatController.playerAttack(), msgExpected.toString());
+        Assert.assertEquals(">John attacked monster for " + damageExpected + " damage\n", combatController.playerAttack());
     }
 
     @Test
     public void testPlayerHpBarReturn() {
         int healthPoints = 100;
-        Assert.assertEquals(combatController.updatePlayerHpBar(), 100);
+        Assert.assertEquals(100, combatController.updatePlayerHpBar());
     }
 
 }
