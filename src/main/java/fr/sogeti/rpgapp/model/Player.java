@@ -58,7 +58,7 @@ public class Player extends Creature {
         if(!loot.equals("")&&!loot.equals("None")){
             StringBuilder sb = new StringBuilder();
             if(this.equipement.equals("")){
-                this.equipement = new String(loot);
+                this.equipement = loot;
             } else{
                 sb.append(equipement).append(";");
                 sb.append(loot);

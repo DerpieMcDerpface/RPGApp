@@ -40,50 +40,36 @@ public class CombatController {
 
 
     public String playerAttack() {
-        StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.player.getName()).append(" attacked ").append(this.creaturesList.get(0).getName()).append(" for ").append(this.player.attack(this.creaturesList.get(0))).append(" dammage\n");
-        return sb.toString();
+        return ">" + this.player.getName() + " attacked " + this.creaturesList.get(0).getName() + " for " + this.player.attack(this.creaturesList.get(0)) + " dammage\n";
     }
 
     public String playerDodge() {
         this.player.dodge();
-        StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.player.getName()).append(" is dodging !\n");
-        return sb.toString();
+        return ">" + this.player.getName() + " is dodging !\n";
     }
 
     //Player spells not implemented yet
     public String playerSpell() {
-        StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.player.getName()).append(" casted a spell !\n");
-        return sb.toString();
+        return ">" + this.player.getName() + " casted a spell !\n";
     }
 
     //Player add not implemented yet !
     public String addPlayer() {
-        StringBuffer sb = new StringBuffer();
-        return sb.toString();
+        return "";
     }
 
     public String monsterAttack() {
-        StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.creaturesList.get(0).getName()).append(" attacked ").append(this.player.getName()).append(" for ").append(this.creaturesList.get(0).attack(this.player)).append(" dammage\n");
-        return sb.toString();
+        return ">" + this.creaturesList.get(0).getName() + " attacked " + this.player.getName() + " for " + this.creaturesList.get(0).attack(this.player) + " dammage\n";
     }
 
     public String monsterDodge() {
         this.creaturesList.get(0).dodge();
-        StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.creaturesList.get(0).getName()).append(" is dodging !\n");
-        return sb.toString();
+        return ">" + this.creaturesList.get(0).getName() + " is dodging !\n";
     }
 
     public String monsterSpell() {
         if (this.creaturesList.get(0) instanceof MagicCaster) {
-            MagicCaster magicCaster = ((MagicCaster) this.creaturesList.get(0));
-            StringBuffer sb = new StringBuffer();
-            sb.append(">").append(this.creaturesList.get(0).getName()).append(" cast a spell on ").append(this.player).append(" dealing some dammages\n");
-            return sb.toString();
+            return ">" + this.creaturesList.get(0).getName() + " cast a spell on " + this.player + " dealing some dammages\n";
         } else {
             return "I cannot cast spells :'(\n";
         }
@@ -91,8 +77,7 @@ public class CombatController {
 
     //Monster add not implemented yet
     public String addMonster() {
-        StringBuffer sb = new StringBuffer();
-        return sb.toString();
+        return "";
     }
 
     public int updatePlayerHpBar() {
