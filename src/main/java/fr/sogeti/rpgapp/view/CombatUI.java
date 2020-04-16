@@ -77,7 +77,7 @@ public class CombatUI {
         healthBar2.setValue(updatedIntValues[2]);
         healthBar2.setMaximum(updatedIntValues[3]);
         expBar1.setValue(updatedIntValues[4]);
-        expBar1.setMaximum(1000);
+        expBar1.setMaximum(10);
         nameLabel1.setText(updatedStringValues[0]);
         nameLabel2.setText(updatedStringValues[1]);
         levelField1.setText(updatedStringValues[2]);

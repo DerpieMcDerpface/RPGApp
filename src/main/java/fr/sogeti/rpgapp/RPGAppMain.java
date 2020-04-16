@@ -106,8 +106,10 @@ public class RPGAppMain {
                 Monster temporaryCast = (Monster) this.controller.getCreaturesList().get(0);
                 this.userInterface.writeMessage(">You won the fight !\n");
                 this.userInterface.writeMessage(">XP won : " + temporaryCast.getExpReward() + "\n" + "Loot earned : " + temporaryCast.getLoot() + "\n");
+                this.controller.getPlayer().gainExperience(temporaryCast.getExpReward());
             }
-            //userInterface.disableAll();
+            updateUI();
+            userInterface.disableAll();
 
         } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies
