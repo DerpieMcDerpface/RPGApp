@@ -1,17 +1,7 @@
 package fr.sogeti.rpgapp.view;
 
-import fr.sogeti.rpgapp.controller.CombatController;
-import fr.sogeti.rpgapp.controller.CombatControllerType;
-import fr.sogeti.rpgapp.model.Creature;
-import fr.sogeti.rpgapp.model.Player;
-import fr.sogeti.rpgapp.model.characteroptions.CharacterClass;
-import fr.sogeti.rpgapp.model.characteroptions.Monster;
-import fr.sogeti.rpgapp.model.realcharacters.Skeleton;
-
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class CombatUI {
     private JPanel mainPanel;
