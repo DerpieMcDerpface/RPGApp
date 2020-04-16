@@ -133,7 +133,7 @@ public class RPGAppMain {
                 sb.append(">XP won : ").append(temporaryCast.getExpReward()).append("\n").append("Loot earned : ").append(temporaryCast.getLoot()).append("\n");
                 this.userInterface.writeMessage(sb.toString());
             }
-            userInterface.disableAll();
+            //userInterface.disableAll();
 
         } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies

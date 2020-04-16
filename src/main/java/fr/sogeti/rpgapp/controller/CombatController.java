@@ -41,7 +41,7 @@ public class CombatController {
 
     public String playerAttack() {
         StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.player.getName()).append(" attacked ").append(this.creaturesList.get(0).getName()).append(" for ").append(this.player.attack(this.creaturesList.get(0))).append(" dammage\n");
+        sb.append(">").append(this.player.getName()).append(" attacked ").append(this.creaturesList.get(0).getName()).append(" for ").append(this.player.attack(this.creaturesList.get(0))).append(" damage\n");
         return sb.toString();
     }
 
@@ -67,7 +67,7 @@ public class CombatController {
 
     public String monsterAttack() {
         StringBuffer sb = new StringBuffer();
-        sb.append(">").append(this.creaturesList.get(0).getName()).append(" attacked ").append(this.player.getName()).append(" for ").append(this.creaturesList.get(0).attack(this.player)).append(" dammage\n");
+        sb.append(">").append(this.creaturesList.get(0).getName()).append(" attacked ").append(this.player.getName()).append(" for ").append(this.creaturesList.get(0).attack(this.player)).append(" damage\n");
         return sb.toString();
     }
 
@@ -82,7 +82,7 @@ public class CombatController {
         if (this.creaturesList.get(0) instanceof MagicCaster) {
             MagicCaster magicCaster = ((MagicCaster) this.creaturesList.get(0));
             StringBuffer sb = new StringBuffer();
-            sb.append(">").append(this.creaturesList.get(0).getName()).append(" cast a spell on ").append(this.player).append(" dealing some dammages\n");
+            sb.append(">").append(this.creaturesList.get(0).getName()).append(" cast a spell on ").append(this.player).append(" dealing some damages\n");
             return sb.toString();
         } else {
             return "I cannot cast spells :'(\n";
