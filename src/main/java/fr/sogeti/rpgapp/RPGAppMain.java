@@ -10,8 +10,8 @@ import fr.sogeti.rpgapp.model.realcharacters.Skeleton;
 import fr.sogeti.rpgapp.view.CombatUI;
 
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+
+import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
 public class RPGAppMain {
 
@@ -20,77 +20,62 @@ public class RPGAppMain {
     private boolean playerTurn;
 
     public RPGAppMain() {
-        CombatUI combatUI = new CombatUI();
-        this.userInterface = combatUI;
+        this.userInterface = new CombatUI();
 
         //Action listener for players
-        this.userInterface.getAttackBtn1().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(controller.playerAttack());
-                updateUI();
-                playerTurn = false;
-            }
+        this.userInterface.getAttackBtn1().addActionListener(e -> {
+            userInterface.getLogArea().append(controller.playerAttack());
+            updateUI();
+            playerTurn = false;
         });
 
-        this.userInterface.getDodgeBtn1().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(controller.playerDodge());
-                updateUI();
-                playerTurn = false;
-            }
+        this.userInterface.getDodgeBtn1().addActionListener(e -> {
+            userInterface.getLogArea().append(controller.playerDodge());
+            updateUI();
+            playerTurn = false;
         });
 
-        this.userInterface.getSpellBtn1().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(">Wingardium leviosah\n");
-                userInterface.getLogArea().append(">Nothing happened\n");
-                updateUI();
-                playerTurn = false;
-            }
+        this.userInterface.getSpellBtn1().addActionListener(e -> {
+            userInterface.getLogArea().append(">Wingardium leviosah\n");
+            userInterface.getLogArea().append(">Nothing happened\n");
+            updateUI();
+            playerTurn = false;
         });
 
         //Action listeners for monster
-        this.userInterface.getAttackBtn2().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(controller.monsterAttack());
-                updateUI();
-                playerTurn = true;
-            }
+        this.userInterface.getAttackBtn2().addActionListener(e -> {
+            userInterface.getLogArea().append(controller.monsterAttack());
+            updateUI();
+            playerTurn = true;
         });
 
-        this.userInterface.getDodgeBtn2().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(controller.monsterDodge());
-                updateUI();
-                playerTurn = true;
-            }
+        this.userInterface.getDodgeBtn2().addActionListener(e -> {
+            userInterface.getLogArea().append(controller.monsterDodge());
+            updateUI();
+            playerTurn = true;
         });
 
-        this.userInterface.getSpellBtn2().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                userInterface.getLogArea().append(">Wingardium leviosah\n");
-                userInterface.getLogArea().append(">Nothing happened\n");
-                updateUI();
-                playerTurn = true;
-            }
+        this.userInterface.getSpellBtn2().addActionListener(e -> {
+            userInterface.getLogArea().append(">Wingardium leviosah\n");
+            userInterface.getLogArea().append(">Nothing happened\n");
+            updateUI();
+            playerTurn = true;
         });
     }
 
     public void updateUI() {
         int playerHealth = this.controller.updatePlayerHpBar();
+        int playerMaxHP = this.controller.getPlayer().getMaximumHealth();
         int monsterHealth = this.controller.updateMonsterHpBar();
+        int monsterMaxHP = this.controller.getCreaturesList().get(0).getMaximumHealth();
         int playerXP = this.controller.updatePlayerXpBar();
+        int[] updatedIntValues = new int[] {playerHealth, playerMaxHP, monsterHealth, monsterMaxHP, playerXP};
         String playerName = this.controller.updatePlayerName();
         String monsterName = this.controller.updateMonsterName();
-        String playerLevel = "Level : " + Integer.toString(this.controller.updatePlayerLevelLabel());
-        String monsterLevel = "Level : " + Integer.toString(this.controller.updateMonsterLevelLabel());
-        userInterface.updateUI(playerHealth, monsterHealth, playerXP, playerName, monsterName, playerLevel, monsterLevel);
+        String playerLevel = "Level : " + this.controller.updatePlayerLevelLabel();
+        String monsterLevel = "Level : "+this.controller.updateMonsterLevelLabel();
+        String[] updatedStringValues = new String[] {playerName,monsterName,playerLevel,monsterLevel};
+        userInterface.updateUI(updatedIntValues,updatedStringValues);
     }
 
     public void setController(Player player, Creature monster) {
@@ -105,10 +90,10 @@ public class RPGAppMain {
         return this.userInterface;
     }
 
-    public boolean runFight() {
+    public void runFight() {
         JFrame frame = new JFrame("RPG App");
         frame.setContentPane(this.getCombatUI().getMainPanel());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setSize(1200, 800);
@@ -129,19 +114,17 @@ public class RPGAppMain {
             } else if (this.controller.getCreaturesList().get(0).getHealthPoints() < 0) {
                 Monster temporaryCast = (Monster) this.controller.getCreaturesList().get(0);
                 this.userInterface.writeMessage(">You won the fight !\n");
-                StringBuffer sb = new StringBuffer();
-                sb.append(">XP won : ").append(temporaryCast.getExpReward()).append("\n").append("Loot earned : ").append(temporaryCast.getLoot()).append("\n");
-                this.userInterface.writeMessage(sb.toString());
+                this.userInterface.writeMessage(">XP won : " + temporaryCast.getExpReward() + "\n" + "Loot earned : " + temporaryCast.getLoot() + "\n");
             }
             //userInterface.disableAll();
 
         } else if (this.controller.getType() == CombatControllerType.MULTIPLE_ENEMIES) {
             // TO-DO Next sprint : implement combat for multiples enemies
+            System.out.println("Not implemented yet");
         } else {
             // ERROR ?
+            System.out.println("Not implemented yet");
         }
-
-        return true;
     }
 
     public static void main(String[] args) {
@@ -155,7 +138,7 @@ public class RPGAppMain {
 
         JFrame frame = new JFrame("RPG App");
         frame.setContentPane(app.getCombatUI().getMainPanel());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setSize(1200, 800);
