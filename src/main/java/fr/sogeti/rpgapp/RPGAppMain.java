@@ -90,7 +90,7 @@ public class RPGAppMain {
         return this.userInterface;
     }
 
-    public void runFight() {
+    public void runFight(boolean isPlayerTurn) {
         JFrame frame = new JFrame("RPG App");
         frame.setContentPane(this.getCombatUI().getMainPanel());
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -100,7 +100,7 @@ public class RPGAppMain {
         frame.setLocationRelativeTo(null);
         updateUI();
 
-        this.playerTurn = true;
+        this.playerTurn = isPlayerTurn;
         if (this.controller.getType() == CombatControllerType.ONE_ON_ONE) {
             while (this.controller.getPlayer().getHealthPoints() > 0 && this.controller.getCreaturesList().get(0).getHealthPoints() > 0) {
                 if (this.playerTurn) {
@@ -134,8 +134,6 @@ public class RPGAppMain {
         Creature monster = new Skeleton(40, 2, new int[]{10, 10, 10});
 
         app.setController(player, monster);
-        app.runFight();
-
         JFrame frame = new JFrame("RPG App");
         frame.setContentPane(app.getCombatUI().getMainPanel());
         frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -144,6 +142,6 @@ public class RPGAppMain {
         frame.setSize(1200, 800);
         frame.setLocationRelativeTo(null);
 
-        app.runFight();
+        app.runFight(true);
     }
 }
