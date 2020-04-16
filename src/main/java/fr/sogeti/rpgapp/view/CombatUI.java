@@ -32,53 +32,8 @@ public class CombatUI {
     private JLabel nameLabel2;
     private JLabel nameLabel1;
 
-    private CombatController controller;
 
     public CombatUI() {
-        //Action listener for players
-        attackBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : damage monster and show message in log panel
-            }
-        });
-
-        dodgeBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : set Player.isDodging to true and show message in log panel
-            }
-        });
-
-        spellBtn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : use player spell and show message in log panel
-            }
-        });
-
-        //Action listeners for monster
-        attackBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : damage player and show message in log panel
-            }
-        });
-
-        dodgeBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : set Monster.isDodging to true and show message in log panel
-            }
-        });
-
-        spellBtn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                //TO-DO : use monster spell and show message in log panel
-            }
-        });
-
         addBtn1.setBackground(Color.DARK_GRAY);
         addBtn2.setBackground(Color.DARK_GRAY);
         attackBtn1.setBackground(Color.DARK_GRAY);
@@ -90,31 +45,48 @@ public class CombatUI {
         logArea.setBackground(Color.GRAY);
     }
 
-
     public void switchEnabledPlayerButtons() {
-        if (attackBtn1.isEnabled()) {
-            spellBtn1.setEnabled(false);
-            attackBtn1.setEnabled(false);
-            dodgeBtn1.setEnabled(false);
-        } else {
-            //Spell not implemented for player yet.
-            //spellBtn1.setEnabled(true);
-            attackBtn1.setEnabled(true);
-            dodgeBtn1.setEnabled(true);
-        }
+        attackBtn1.setEnabled(true);
+        dodgeBtn1.setEnabled(true);
+        spellBtn1.setEnabled(true);
+        attackBtn2.setEnabled(false);
+        dodgeBtn2.setEnabled(false);
+        spellBtn2.setEnabled(false);
+        mainPanel.repaint();
     }
 
     public void switchEnabledMonsterButtons() {
-        if (attackBtn2.isEnabled()) {
-            spellBtn2.setEnabled(false);
-            attackBtn2.setEnabled(false);
-            dodgeBtn2.setEnabled(false);
-        } else {
-            //Not implemented yet 
-            //spellBtn2.setEnabled(true);
-            attackBtn2.setEnabled(true);
-            dodgeBtn2.setEnabled(true);
-        }
+        attackBtn1.setEnabled(false);
+        dodgeBtn1.setEnabled(false);
+        spellBtn1.setEnabled(false);
+        attackBtn2.setEnabled(true);
+        dodgeBtn2.setEnabled(true);
+        spellBtn2.setEnabled(true);
+        mainPanel.repaint();
+    }
+
+    public void writeMessage(String msg) {
+        logArea.append(msg);
+    }
+
+    public void disableAll() {
+        attackBtn1.setEnabled(false);
+        dodgeBtn1.setEnabled(false);
+        spellBtn1.setEnabled(false);
+        attackBtn2.setEnabled(false);
+        dodgeBtn2.setEnabled(false);
+        spellBtn2.setEnabled(false);
+        mainPanel.repaint();
+    }
+
+    public void updateUI(int healthBar1Value, int healthBar2Value, int expBar1Value, String nameLabel1Text, String nameLabel2Text, String levelField1Text, String levelField2Text ) {
+        healthBar1.setValue(healthBar1Value);
+        healthBar2.setValue(healthBar2Value);
+        expBar1.setValue(expBar1Value);
+        nameLabel1.setText(nameLabel1Text);
+        nameLabel2.setText(nameLabel2Text);
+        levelField1.setText(levelField1Text);
+        levelField2.setText(levelField2Text);
     }
 
     public JPanel getMainPanel() {
@@ -185,7 +157,4 @@ public class CombatUI {
         return nameLabel1;
     }
 
-    public CombatController getController() {
-        return controller;
-    }
 }
